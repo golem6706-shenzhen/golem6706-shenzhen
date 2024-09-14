@@ -63,17 +63,7 @@
   <!-- Essential Viewer Model -->
   <script type="application/json" id="wix-essential-viewer-model">
     {
-      "site":{
-        "metaSiteId":"golem6706-site-id",
-        "userId":"golem6706-user-id", 
-        "siteId":"golem6706-site-id",
-        "externalBaseUrl":"https://www.golem6706.org",
-        "siteRevision":1,
-        "siteType":"UGC"
-      },
-      "language":{
-        "userLanguage":"en"
-      },
+      
       "commonConfig":{
         "brand":"wix",
         "bsi":"",
@@ -117,6 +107,20 @@
       border-radius: 5px;
       font-weight: bold;
     }
+    .work-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    .work-item h2 {
+      margin-top: 0;
+    }
+    .work-item a {
+      color: #e63946;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 
 </head>
@@ -129,16 +133,18 @@
   <div class="content">
     <h2>About Us</h2>
     <p>Team 6706 Golem is a FIRST Robotics Competition team from Shenzhen, China. Founded in 2017, we are dedicated to promoting STEM education and fostering innovation in robotics.</p>
+
     
     <h2>Our Achievements</h2>
     <ul>
-      <li>https://frc-events.firstinspires.org/team/6706</li>
-      <li>https://www.thebluealliance.com/team/6706</li>
       <li>2024 Won Innovation in Control Award in Iowa regional</li>
       <li>2024 top1 in the qualification of Beijing offseason</li>
       <li>2018 Won Quality Award in Shenzhen Regional - Winner</li>
       <li>2017 Greater Pittsburgh Regional - Highest Rookie Seed & Rookie Inspiration Award</li>
     </ul>
+
+    <h2>Find More</h2>
+    <div id="work-container"></div>
 
     <h2>Get Involved</h2>
     <p>We're always looking for new members, mentors, and sponsors to join our team. If you're passionate about robotics and want to make a difference, we'd love to hear from you!</p>
@@ -147,13 +153,56 @@
     <h2>Follow Us</h2>
     <p>Stay updated with our latest news and events:</p>
     <ul>
-      <li><a href="https://www.facebook.com/FRCTeam6706">Facebook</a></li>
-      <li><a href="https://www.instagram.com/frc6706golem/">Instagram</a></li>
+      <li><a href="https://space.bilibili.com/92678788">Bilibili</a></li>
     </ul>
   </div>
 
   <script async="" src="https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.7700cd07.bundle.min.js"></script>
   <script async="" src="https://static.parastorage.com/services/wix-thunderbolt/dist/main.16c08821.bundle.min.js"></script>
   <script async="" src="https://static.parastorage.com/services/wix-thunderbolt/dist/main.renderer.1d21f023.bundle.min.js"></script>
+
+  <script>
+    const workItems = [
+      {
+        title: "FRC Events",
+        description: "查看我们在FRC官方网站上的详细信息",
+        link: "https://frc-events.firstinspires.org/team/6706"
+      },
+      {
+        title: "The Blue Alliance",
+        description: "在The Blue Alliance上查看我们的比赛记录",
+        link: "https://www.thebluealliance.com/team/6706"
+      },
+      {
+        title: "2024 Iowa Regional",
+        description: "获得创新控制奖",
+        link: "#"
+      },
+      {
+        title: "2024 北京赛季后赛",
+        description: "资格赛第一名",
+        link: "#"
+      }
+    ];
+
+    function createWorkItem(item) {
+      return `
+        <div class="work-item">
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+          <a href="${item.link}" target="_blank">查看详情</a>
+        </div>
+      `;
+    }
+
+    function displayWorkItems() {
+      const container = document.getElementById('work-container');
+      workItems.forEach(item => {
+        container.innerHTML += createWorkItem(item);
+      });
+    }
+
+    displayWorkItems();
+  </script>
 </body>
 </html>

@@ -8,8 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Wix.com Website Builder"/>
 
-  <link rel="icon" sizes="192x192" href="ilove6706" type="image/x-icon"/>
-  <link rel="shortcut icon" href="GolemFRCLOGO.png" type="image/x-icon"/>
+
   <link rel="apple-touch-icon" href="GolemFRCLOGO.png" type="image/x-icon"/>
 
   <!-- Safari Pinned Tab Icon -->
@@ -121,6 +120,23 @@
       text-decoration: none;
       font-weight: bold;
     }
+    .logo {
+      max-width: 200px;
+      margin: 20px auto;
+      display: block;
+    }
+    .album {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .album img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 5px;
+    }
   </style>
 
 </head>
@@ -131,6 +147,8 @@
   </header>
 
   <div class="content">
+    <img src="GolemFRCLOGO.png" alt="Golem FRC Logo" class="logo">
+
     <h2>About Us</h2>
     <p>Team 6706 Golem is a FIRST Robotics Competition team from Shenzhen, China. Founded in 2017, we are dedicated to promoting STEM education and fostering innovation in robotics.</p>
 
@@ -148,13 +166,18 @@
 
     <h2>Get Involved</h2>
     <p>We're always looking for new members, mentors, and sponsors to join our team. If you're passionate about robotics and want to make a difference, we'd love to hear from you!</p>
-    <a href="#contact" class="cta-button">Contact Us</a>
+    <a href="mailto:244501294@qq.com" class="cta-button">Contact Us</a>
 
     <h2>Follow Us</h2>
     <p>Stay updated with our latest news and events:</p>
     <ul>
       <li><a href="https://space.bilibili.com/92678788">Bilibili</a></li>
     </ul>
+
+    <h2>Team Album</h2>
+    <div id="team-album" class="album">
+      <!-- 相册图片将在这里动态添加 -->
+    </div>
   </div>
 
   <script async="" src="https://static.parastorage.com/services/wix-thunderbolt/dist/thunderbolt-commons.7700cd07.bundle.min.js"></script>
@@ -203,6 +226,26 @@
     }
 
     displayWorkItems();
+
+    // 相册功能
+    const albumImages = [
+      // 在这里添加相册图片的URL
+      // 例如: "path/to/image1.jpg",
+      //       "path/to/image2.jpg",
+      //       "path/to/image3.jpg"
+    ];
+
+    function displayAlbum() {
+      const albumContainer = document.getElementById('team-album');
+      albumImages.forEach(imageUrl => {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.alt = "Team 6706 Golem";
+        albumContainer.appendChild(img);
+      });
+    }
+
+    displayAlbum();
   </script>
 </body>
 </html>

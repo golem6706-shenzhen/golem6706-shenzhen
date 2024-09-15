@@ -1,4 +1,5 @@
 ## Hi there 👋
+repository of website of FRC team *Golem* 6706 
 
 <!--
 **golem6706-shenzhen/golem6706-shenzhen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

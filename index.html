@@ -206,14 +206,14 @@
         title: "2024 北京赛季后赛",
         description: "资格赛第一名",
         link: "TOP1BeijingWRC.jpg"
-      }
+      },
       {
         title: "2024 Building",
         description: "brief record of our building process in 2024 Crescendo",
-        link: "#"
-      }
+        link: "FRC赛事纪录_最终_20240322120322(1)"
+      },
       {
-        title: "Shenzhen RObotics Alliance",
+        title: "Shenzhen Robotics Alliance",
         description: "an open organization dedicated to spreading FRC, founded by Team 5516 Iron Maple and Team 6706 Golem",
         link: "https://github.com/Shenzhen-Robotics-Alliance/"
       }
@@ -236,7 +236,8 @@
       });
     }
 
-    displayWorkItems();
+    // 页面加载完成后执行displayWorkItems函数
+    window.addEventListener('load', displayWorkItems);
 
     // 相册功能
     const albumImages = [
@@ -270,7 +271,8 @@
       });
     }
 
-    displayAlbum();
+    // 页面加载完成后执行displayAlbum函数
+    window.addEventListener('load', displayAlbum);
   </script>
 </body>
 </html>
